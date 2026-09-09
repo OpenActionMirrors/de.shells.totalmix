@@ -1,18 +1,28 @@
-![GitHub last commit](https://img.shields.io/github/last-commit/shells-dw/streamdeck-totalmix) [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/dwshells) [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/dwshells)
+![GitHub](https://img.shields.io/github/license/shells-dw/streamdeck-totalmix)     ![GitHub last commit](https://img.shields.io/github/last-commit/shells-dw/streamdeck-totalmix) [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/dwshells) [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/dwshells)
+
 
 # TotalMix FX Control (unofficial Stream Deck plugin)
 
-## What is this (and what does it do?)
+## What Is This (and what does it do?)
 
-It's a plugin for the [Elgato Stream Deck][Stream Deck] on Windows and macOS that puts [RME TotalMix FX][] on your keys and dials: faders, mute, solo, phantom power, snapshots, DURec, effects, dynamics, Room EQ and more, with everything drawn live from the mixer so the deck always shows what TotalMix is doing. Note: an RME audio interface/card is needed for TotalMix FX to work.
+It's a plugin for the [Elgato Stream Deck][Stream Deck] on Windows and MacOS that puts [RME TotalMix FX][] on your keys and dials: faders, mute, solo, phantom power, snapshots, DURec, effects, dynamics, Room EQ and more, with everything drawn live from the mixer so the deck always shows what TotalMix is doing. Note: an RME audio interface/card is needed for TotalMix FX to work.
 
-![Stream Deck+ recording layout](docs/images/v5_deck_plus.png)
+![Stream Deck+ recording layout](/docs/images/v5_deck_plus.png)
 
 ## What's new since v3
 
-v5 is the first release after v3.3.5 published to the Marketplace. The v4 line (a full rewrite) was published on GitHub as an intermediate development version; v5 builds the TotalMix look on top of it. The full list is in the [changelog](https://shells-dw.github.io/streamdeck-totalmix/changelog.html).
+v5 is the first release after v3.3.5 published to the Marketplace. The v4 line (a full rewrite) was published on GitHub as an intermediate development version; v5 builds the TotalMix look on top of it.
 
-### New in v5
+### New in 5.3
+
+- **Value and ramp presses**. A key can write a fixed value, fade to it over a set time, or run the level up and down for as long as it is held. A long press can carry a second action of its own.
+- **Confirm and momentary** on both Toggle actions. A key can arm on the first press and write on the second, or switch the parameter on only while it is held — phantom power and push-to-talk respectively.
+- **Clip latch and signal watch**. Two Display modes over the level stream: one latches at a set dBFS and holds until pressed, the other raises once a channel has stayed silent too long, for a mic that came unplugged mid-take.
+- **Channel cycling**. Next and previous channel as a key press or a dial gesture, over a channel list you build. Name a group and a row of dials moves as one strip.
+- **More control room**. Speaker B, the four Phones slots, monitor balance and a shared monitor path that level buttons follow, each tracking TotalMix's assignment.
+- **Fuller strips**. FX lamps beside the fader, a gain-reduction bar, a record-enable frame, and mute/solo pills that can be switched off to give the fader back the room.
+
+### New in v5.0
 
 - **Looks similar to TotalMix**. Every key and Stream Deck+ display is drawn live in the familiar colours, Global OSC and classic alike: fader strips with RME's scale and a peak meter, knobs with section-coloured arcs, dropdown boxes for lists, and the familiar blue M / orange S / red 48V buttons. An *Appearance* setting per button switches back to the plain icons of the previous versions.
 - **Global OSC first**. The five "(TotalMix 2.1+)" actions carry the new feature set: absolute channel numbers, real state feedback, meters, snapshots that light while loaded. The classic actions for TotalMix FX 1.96–2.0 are still included and still work, but new features land on Global OSC.
@@ -26,23 +36,28 @@ v5 is the first release after v3.3.5 published to the Marketplace. The v4 line (
 
 ### New since v3 (the v4 line)
 
-- Complete rewrite in TypeScript on Elgato's Node SDK instead of C#/.NET; one persistent OSC connection, no polling, near-zero CPU. Runs on macOS; one installer for Windows and Mac.
-- Stream Deck+ dials: turn to set levels, with channel name, live readout and position on the display. Press and touch are assignable per dial. Volume buttons for decks without dials, where each press nudges by a set amount.
-- dB-accurate stepping that follows RME's fader curve, so every step moves the same amount anywhere on the throw.
-- Live two-way feedback: change something in TotalMix and your buttons update instantly.
-- Pick channels by name, "1 · Mic 1", read live from your interface.
-- Input gain, pan, effects (reverb, echo, low cut, EQ, dynamics, Auto Level) and Room EQ (all 9 bands) on dials.
-- Jump straight to submixes, snapshots, buses and Quick Workspaces.
-- TotalMix FX 2.0 compatible (and 1.96+), with a simpler setup: one OSC controller, no config file.
-- TotalMix FX 2.1 "Global OSC" support, with five additional actions (Volume, Toggle, Trigger, Display, FX & Dynamics) with absolute channel addressing: a button means "input 3", not "the third fader of whatever bank is shown". Snapshots with a real active-state light, DURec transport, layouts, presets, undo/redo, device status and DSP load.
-- Defaults for new buttons: host, ports and dB-per-step set once, copied into every button you add; stored in Stream Deck, so they survive updates.
+- Complete rewrite in TypeScript on Elgato's Node SDK instead of C#/.NET; zero runtime dependencies beyond the Stream Deck SDK, one persistent OSC connection, no polling and near-zero CPU
+- Runs on macOS, one installer for Windows and Mac
+- Stream Deck+ dials: turn to set levels, with channel name, live readout and position on the display. Press and touch are assignable per dial (mute, solo, cue, phantom, dim, mono, talkback, speaker B, external input, mute FX return, recall, global mute/solo, set to −∞, set to 0 dB, centre the pan, bypass or reset an effect, or nothing)
+- Volume buttons for decks without dials, where each press nudges up or down by a set amount; place a `+` and `−` pair for a volume rocker
+- dB-accurate stepping that follows RME's fader curve, so every step moves the same amount anywhere on the throw
+- Live two-way feedback: change something in TotalMix and your buttons update instantly; mute and solo show on the dial display
+- Pick channels by name, "1 · Mic 1", read live from your interface
+- Input gain on a dial, per channel, stereo pairs linked, with per-device gain ranges
+- Pan on a dial, with TotalMix's `L50 / C / R50` readout and a tap to centre
+- Effects control: reverb, echo, low cut, EQ, dynamics and Auto Level parameters on dials; press to switch the section on or off
+- Room EQ per output channel: enable toggle, plus volume correction, delay, and gain/frequency/Q of all 9 bands (filter type on bands 1, 8, 9)
+- Jump straight to submixes, snapshots, buses and Quick Workspaces
+- TotalMix FX 2.0 compatible (and 1.96+), with a simpler setup: one OSC controller, no config file
+- TotalMix FX 2.1 "Global OSC" support, with five additional actions (Volume, Toggle, Trigger, Display, FX & Dynamics) with absolute channel addressing: a button means "input 3", not "the third fader of whatever bank is shown". Snapshots with a real active-state light, DURec transport, layouts, presets, undo/redo, device status and DSP load
+- Defaults for new buttons: host, ports and dB-per-step set once, copied into every button you add; stored in Stream Deck, so they survive updates
 
 > [!NOTE]
-> Global OSC requires TotalMix FX 2.1, which RME marks as beta. The protocol may change with any release.
+> Global OSC needs TotalMix FX 2.1. RME marks the protocol as beta, so it may change with any release.
 
 ## Release / Installation
 
-Install it from the Elgato Marketplace inside the Stream Deck app or open the [Elgato Marketplace] in the browser. After installation it lands in Stream Deck's action list as *TotalMix FX Control*.
+Install it from the Elgato Marketplace inside the Stream Deck app, or download the plugin file from the GitHub Release and open it; either way it lands in Stream Deck's action list as *TotalMix FX Control*.
 
 Requires Stream Deck 6.9 or newer on Windows 10+ or macOS 13+.
 
@@ -81,9 +96,9 @@ No additional software is needed.
 |---|---|---|
 | Volume (TotalMix 2.1+) | Key or dial | Global OSC: channel fader, submix send, channel or send pan, preamp gain, or a control room monitor (Main Out, Speaker B, a Phones slot, the shared monitor path, balance), addressed by absolute channel number. Rotate to adjust; press and touch are assignable. Keys nudge up or down per press. Optional gain-reduction bar beside the meter and FX lamps beside the fader. |
 | Toggle (TotalMix 2.1+) | Key | Global OSC: mute, PFL, phase (L/R), 48V, pad, instrument, AutoSet, M/S, loopback, stereo link, record, talkback destination, low cut, EQ, dynamics, Auto Level, Room EQ; control room (dim, mono, talkback, external input, speaker B, mute Main Out, mute FX return, link Main/Speaker B); global mute/solo enable; reverb, echo; mute/solo/fader groups. |
-| Trigger (TotalMix 2.1+) | Key | Global OSC: load snapshots (key lights while active), layout presets, EQ/dynamics/Room EQ presets per channel and reverb/echo presets by number, undo/redo, recall, DURec transport, show/hide the TotalMix window, cue cycling, monitor-path cycling. |
+| Trigger (TotalMix 2.1+) | Key | Global OSC: load and save snapshots (key lights while active), clear all solos or mutes, layout presets, EQ/dynamics/Room EQ presets per channel and reverb/echo presets by number, undo/redo, recall, DURec transport, show/hide the TotalMix window, cue cycling, monitor-path cycling. |
 | Display (TotalMix 2.1+) | Key or dial | Global OSC, read-only: device name, connection, DSP load, DURec time and state, channel peak level with clip latch and signal watch, EQ and dynamics curves, dynamics values, gain-reduction needle. Press to force a refresh or clear an alarm. |
-| FX & Dynamics (TotalMix 2.1+) | Key or dial | Global OSC: reverb, echo, EQ, low cut, dynamics, Auto Level, width, crossfeed, delay, reference level and Room EQ (volume correction, delay, all 9 bands), addressed by absolute channel number. Rotate to adjust; press and touch are assignable. Keys nudge, or select one entry of a list directly. |
+| FX & Dynamics (TotalMix 2.1+) | Key or dial | Global OSC: reverb, echo, EQ, low cut, dynamics, Auto Level, width, crossfeed, reference level and Room EQ (volume correction, delay, all 9 bands), addressed by absolute channel number. Rotate to adjust; press and touch are assignable. Keys nudge, or select one entry of a list directly. |
 | Levels & Parameters (classic) | Key or dial | Main / Control Room volume, a strip in the current bank, the selected channel, pan, input preamp gain, or an FX, EQ, dynamics, Auto Level or Room EQ parameter. |
 | Toggle (classic) | Key | Control room, global mute/solo enable, trim mode; per strip in the current bank: mute, solo, phantom, cue; per channel: mute, solo, phantom, EQ, low cut, dynamics, Auto Level, stereo/mono, phase, instrument, pad, M/S, AutoSet, loopback, talkback include, trim exclude, record enable; DURec; groups, snapshots, reverb, echo, Room EQ. |
 | Select (classic) | Key | Jump to a submix, bank start, channel offset, bus, snapshot or Quick Workspace, or step through tracks and banks. |
@@ -101,37 +116,30 @@ Everything else lives in the [documentation](https://shells-dw.github.io/streamd
 
 ## A recording layout example
 
-The layout at the top of this page is a Stream Deck+ set up for a single-mic session: 48V and mute on the mic, two snapshots (say "Recording" and "Mixing"), DURec record and stop, talkback and dim; on the dials, mic gain, the mic's fader into Main, the phones level and the main out. On a Stream Deck+ XL (9 × 4 keys, six dials) there's room for the effect chain as well: EQ gains with the EQ curve, low cut, compressor threshold with the dynamics curve and gain-reduction needle, DSP load, with the six dials on levels and the DURec clock:
+The layout at the top of this page is a Stream Deck+ set up for a single-mic session. The keys carry 48V and mute on the mic, two snapshots (say "Recording" and "Mixing"), DURec record and stop, talkback and dim. The dials carry mic gain, the mic's fader into Main, the phones level and the main out.
 
-![Stream Deck XL layout](docs/images/v5_deck_xl.png)
+A Stream Deck+ XL (9 × 4 keys, six dials) has room for the effect chain as well: EQ gains with the EQ curve, low cut, compressor threshold with the dynamics curve and gain-reduction needle, and DSP load, with the six dials on levels and the DURec clock.
 
-## I have an issue or miss a feature?
+![Stream Deck XL layout](/docs/images/v5_deck_xl.png)
 
-You can submit an issue or request a feature with [GitHub issues]. Please describe as precisely as possible what went wrong and include any log files, as they are incredibly helpful for figuring out what happened. Logs can be found in `%APPDATA%\Elgato\StreamDeck\Plugins\de.shells.totalmixgen2.sdPlugin\logs` on Windows and `~/Library/Application Support/com.elgato.StreamDeck/Plugins/de.shells.totalmixgen2.sdPlugin/logs` on macOS.
+# I have an issue or miss a feature?
 
-## Source code
+You can submit an issue or request a feature with [GitHub issues]. Please describe as precisely as possible what went wrong and also include any log files as they are incredibly helpful for me to figure out what went wrong. Logs can be found in `%APPDATA%\Elgato\StreamDeck\Plugins\de.shells.totalmixgen2.sdPlugin\logs` on Windows and `~/Library/Application Support/com.elgato.StreamDeck/Plugins/de.shells.totalmixgen2.sdPlugin/logs` on macOS.
 
-The source code and precompiled plugin builds are no longer published here; this repository only hosts the documentation.
+# Contribute
 
-I made that decision to avoid what I see in other projects I contribute to or maintain: high-effort, low-quality AI-generated pull requests that take hours to pick apart just to find silly bugs, breaking changes or unintended side effects buried deep in the code. I know people only want to help and AI enables them to, but in the end it's me spending two hours on what a prompt produced in two minutes and then got sent to me untested. I do not intend to spend my time this way, and I'm sure you'll understand.
+If you're interested in using this plugin but something you really need is missing, let me know. I naturally don't have access to all RME devices, so I can't really try things on the boxes themselves, but eventually we might find a way to work something out.
 
-**The plugin will however stay free. It's free in the Elgato Marketplace and it will stay that way.**
-
-## Feedback and device testing
-
-If you're interested in using this plugin but something you really need is missing, let me know. I naturally don't have access to all RME devices, so I can't try things on the boxes themselves, but eventually we might find a way to work something out.
-
-## Support
+# Support
 
 If you'd like to drop me a coffee for the hours I've spent on this: [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/dwshells) [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/dwshells)
 
-## Disclaimer
+# Disclaimer
 
 This is a private project, I am not affiliated with RME or Elgato. I wrote this plugin out of personal interest.
 
 <!-- Reference Links -->
 
-[Elgato Marketplace]: https://marketplace.elgato.com/product/totalmix-fx-control-bca82a36-06bc-45ce-8bbe-10c18befa21e "Elgato Marketplace"
 [Stream Deck]: https://www.elgato.com/gaming/stream-deck/ "Elgato's Stream Deck product page"
 [RME TotalMix FX]: https://www.rme-audio.de/totalmix-fx.html "RME's TotalMix FX product page"
 [GitHub issues]: https://github.com/shells-dw/streamdeck-totalmix/issues "GitHub issues link"

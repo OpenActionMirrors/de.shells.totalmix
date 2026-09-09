@@ -18,7 +18,7 @@ Level, pan and preamp gain over Global OSC, addressed by absolute channel number
 | Channel fader | A channel's fader. For output channels this is the channel's own fader. For input and playback channels it is the send into a submix, see below. | Bus, Channel, Submix |
 | Submix send (mix node) | One node of the mix matrix: the level of a source into an output's submix. | Source bus, Source channel, To output |
 | Input gain (preamp) | Preamp gain of an input channel, in whole dB, with the ceiling read from the reported device (see [Devices](../devices.md)). Linked stereo pairs move together. Channels without a preamp show 0 and ignore the dial. | Channel |
-| Pan (channel) | A channel's balance, `L50 / C / R50`. | Bus, Channel |
+| Pan (channel) | A channel's balance, `L50 / C / R50`. *Followers* lists channels on the same bus whose pans follow this one, either as the opposite value (L30 here, R30 there, for mono channels kept as a stereo pair) or the same value (linked pans). | Bus, Channel, Mirror pan |
 | Pan (submix send) | The balance of one mix node. | Source bus, Source channel, To output |
 
 ### Control room targets
@@ -31,7 +31,7 @@ Main Out and Speaker B press to mute (fader to −∞) and touch to dim. A Phone
 
 ### Input and playback faders are per-submix
 
-In TotalMix an input strip's fader is its send into the submix currently selected in the window, so over Global OSC these levels live on the mix matrix, one per output. A *Channel fader* on an input or playback channel therefore has a *Submix* picker. *Main Out (auto)* follows the control room's Main Out assignment, or you can pin any output's submix. The fader you see in the TotalMix window only moves while that submix is selected there; the audio changes either way. Output channels have one real fader and no picker.
+In TotalMix an input strip's fader is its send into the submix currently selected in the window, so over Global OSC these levels live on the mix matrix, one per output. A *Channel fader* on an input or playback channel therefore has a *Submix* picker. *Main Out (auto)* follows the Main Out assignment. *Control room monitor (auto)* also follows the Speaker B switch. Or pin any output's submix. The fader you see in the TotalMix window only moves while that submix is selected there; the audio changes either way. Output channels have one real fader and no picker.
 
 TotalMix's *Follow Submix* option should be off when using the Global OSC actions.
 

@@ -11,12 +11,12 @@ Effect, EQ, dynamics, Auto Level, Room EQ, reverb and echo parameters over Globa
 | Group | Parameters | Bus |
 |---|---|---|
 | FX send and return | FX Send (inputs, playbacks), FX Return (outputs) | per channel |
-| EQ | Band 1 type, gain, frequency, Q · Band 2 gain, frequency, Q · Band 3 type, gain, frequency, Q | any |
-| Low cut | Frequency, Slope (6 / 12 / 18 / 24 dB/oct) | any |
-| Dynamics | Make-up gain, Attack, Release, Compressor threshold and ratio, Expander threshold and ratio | any |
-| Auto Level | Max gain, Headroom, Rise time | any |
+| EQ | Band 1 type, gain, frequency, Q · Band 2 gain, frequency, Q · Band 3 type, gain, frequency, Q | inputs, outputs |
+| Low cut | Frequency, Slope (6 / 12 / 18 / 24 dB/oct) | inputs, outputs |
+| Dynamics | Make-up gain, Attack, Release, Compressor threshold and ratio, Expander threshold and ratio | inputs, outputs |
+| Auto Level | Max gain, Headroom, Rise time | inputs, outputs |
 | Control Room | Dim · Recall volume · External input gain | none |
-| Channel | Width (inputs, playbacks) · Crossfeed (outputs; Off, 1 to 5) · Delay (outputs; left and right separately) · Reference level (line inputs and outputs; list depends on the interface, see [Devices](../devices.md)) · DURec track | as listed |
+| Channel | Width (inputs, playbacks) · Crossfeed (outputs; Off, 1 to 5) · Reference level (line inputs and outputs; list depends on the interface, see [Devices](../devices.md)) · DURec track | as listed |
 | Room EQ | Volume correction, Delay, and gain/frequency/Q of all nine bands (type on bands 1, 8, 9); left and right separately | outputs |
 | Reverb | Type, Volume, Pre-delay, Low cut, High cut, Room scale, Smoothness, Width; Time and High damp (Space type); Attack, Hold, Release (Envelope types) | none |
 | Echo | Type, Volume, Delay, Feedback, High cut, Width | none |
@@ -41,7 +41,7 @@ Frequencies are clamped to 20 Hz and 20 kHz, list parameters stop at the ends of
 
 ## Press and touch
 
-By default a press switches the parameter's section on or off (EQ, low cut, dynamics, Auto Level, Room EQ, reverb, echo; FX send and return switch the reverb), and touch parks the value at its neutral and brings it back. Neutral is 0 dB for dB parameters, the first entry of a list, and for Room EQ the values its panel opens on; frequencies and unitless values have none, so their touch defaults to the section switch. Both are reassignable, see [Dials and gestures](../dials-and-gestures.md).
+By default a press switches the parameter's section on or off (EQ, low cut, dynamics, Auto Level, Room EQ, reverb, echo; FX send and return switch the reverb), and touch parks the value at its neutral and brings it back. Neutral is 0 dB for dB parameters (the expander threshold and Auto Level headroom, whose ranges exclude 0 dB, go to the bottom of theirs), the first entry of a list, and for Room EQ the values its panel opens on; frequencies and unitless values have none, so their touch defaults to the section switch. Both are reassignable, see [Dials and gestures](../dials-and-gestures.md).
 
 Parameters with no section (width, crossfeed, delay, reference level, DURec track) have no enable to switch: a press parks them at neutral and a second press restores, where a neutral exists; width and delay have none and the press does nothing unless another gesture is assigned.
 

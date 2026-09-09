@@ -14,7 +14,15 @@ Every level or parameter action also works on a regular key. Under *Key press* (
 
 *Across two keys* draws one strip over a neighbouring pair. Set one key to *Top half* and the key under it to *Bottom half* (or *Left*/*Right* for a side-by-side pair), both on the same channel, and the fader, meter and scale run across both: the strip is laid out at twice the size and each key shows its half. Each key keeps its own press action, so a top/bottom pair is a fader and its own rocker at the same time, with the direction chevron drawn on whichever key it belongs to.
 
+*Link the halves* pairs a split fader's two keys by position, top above bottom or left beside right. A key set to a half takes the neighbour's channel; later edits carry across. Key press, hold and set value stay per key.
+
+*Hold the key* runs a second action on a long press: *To 0 dB*, *To -oo*, *Hard left*, *Hard right*, *Centre*, *Mute*, *Set the value below*, or *Ramp up* / *Ramp down*, which move the level while held at 1–24 dB/s (a preamp in 1 dB steps). Hold time 200–3000 ms. With a hold set, the press runs on release, and not at all once the hold has run. Off by default.
+
 *Next channel* and *Previous channel* are both a key press mode and a dial press or touch gesture. They step the button along a list of channels set under *Advanced: channel cycling*, so four dials can cover sixteen channels. Name a group there and every button using that name steps together, which turns a row of dials into one channel strip. Without a group the channel is stored on the button, so it comes back where you left it. On a dial the target has to be Channel, Input gain or Pan; Main Out and the other control-room targets have no channel to step, so the gesture is not offered there.
+
+*Alt function* swaps the dial to a second target (Channel level, Input gain or Pan) on the same channel; the same gesture swaps back. The alternate behaves as the dedicated button would and is named on the knob caption or the strip header. Not saved: a page change, an edit or a restart returns the dial to its own target.
+
+On Input gain, *Set to −∞* drops the preamp to 0 dB and a second press restores it. The ceiling comes from the detected interface.
 
 *Set the value below* is also available as a dial press or touch gesture, so a dial can jump or fade to a level as well as a key. *Fade over* ramps to the value over a set time instead of jumping, for an end-of-show fade or a timed duck. It interpolates on the fader position, so the move is even from one end of the throw to the other.
 
@@ -31,7 +39,7 @@ A Stream Deck+ dial has three inputs: turn it, press it, tap the touch strip abo
 | A channel, a strip, input gain | Mute | Fader to −∞ (gain to minimum) |
 | A submix send (Global OSC) | Solo | Fader to −∞ |
 | Pan | Mute (solo for a send's pan) | Centre |
-| An effect parameter | Switch the section on/off | Parameter to neutral (0 dB, first list entry, or the middle of the range) |
+| An effect parameter | Switch the section on/off | Parameter to neutral (0 dB or the first list entry; classic: the middle of the range; Global OSC parameters without a neutral switch the section instead) |
 
 Either can be reassigned. The menu is grouped by what the choice acts on and only offers what the target supports:
 

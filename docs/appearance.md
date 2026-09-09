@@ -12,7 +12,7 @@ Keys and Stream Deck+ displays are drawn by the plugin on every change, in colou
 
 **Fader strips** for levels: channel name, M and S pills, the meter, RME's scale with 0 dB marked and the +3 and −3 ticks coloured as in the mixer, the cap on the real fader curve, and the readout in dB. *Meter*, *FX lamps* and *Mute / Solo* each switch off their own column, and the fader takes the room they leave. The classic Levels action draws no meter, because that protocol only reports levels for the visible bank.
 
-**Knobs** for preamp gain, pan and effect parameters, the arc in the section's colour. **Dropdown boxes** for list parameters. **Buttons** for toggles and triggers: blue for mute-type switches, orange for solo, PFL and talkback, red for 48V and record, orange text for the effect sections. **Panels** for the Display action, including the EQ and dynamics curves and the gain-reduction needle.
+**Knobs** for preamp gain, pan and effect parameters, drawn like TotalMix's: a dark disc with the arc on its edge, orange by default, yellow on a pan knob's left half, and the section's colour for EQ bands, dynamics and low cut. **Dropdown boxes** for list parameters. **Buttons** for toggles and triggers: mute and solo keys take TotalMix's M/S look, letter and outline in the state colour on a dark face; snapshot keys its active-snapshot look, orange number and outline; otherwise blue for mute-type switches, orange for solo, PFL and talkback, red for 48V and record, orange text for the effect sections. **Panels** for the Display action, including the EQ and dynamics curves and the gain-reduction needle.
 
 When TotalMix is not reachable the artwork greys out and the readout shows "—". The chevron in a key's header shows which way it nudges.
 
@@ -20,7 +20,7 @@ When TotalMix is not reachable the artwork greys out and the readout shows "—"
 
 ### Meters
 
-Peak level with a hold line, held for 1.5 s and then falling at 12 dB/s; clipping turns the bar red. A stereo pair meters both sides, a mono channel one. With *Gain reduction* ticked, a blue bar beside the meter grows down from the 0 dB mark by the compressor's reduction, continued in green by the expander.
+Peak level with a hold line, held for the *Peak hold* time (TotalMix's 2 s by default) and then falling at 12 dB/s; clipping turns the bar red. A stereo pair meters both sides, a mono channel one. With *Gain reduction* ticked, a blue bar beside the meter grows down from the 0 dB mark by the compressor's reduction, continued in green by the expander.
 
 ![Meters](images/v5_meters.png)
 
@@ -42,7 +42,11 @@ The previous artwork: a static icon per parameter with the value as the key titl
 
 ## Custom images and titles
 
-A custom image or title set in Stream Deck's own key settings always wins over whatever the plugin draws. That's the way to give a key your own icon while keeping its behaviour.
+A custom image or title set in Stream Deck's own key settings always wins over whatever the plugin draws. That's the way to give a key your own icon while keeping its behaviour. With a title set, the plugin leaves out its own name or caption so the two don't overprint.
+
+## Record enable
+
+A channel that is record-enabled for DURec gets a red frame on its Volume fader and on the Display level view, key and touch. *Record frame* on the button switches it off.
 
 ## Display action
 

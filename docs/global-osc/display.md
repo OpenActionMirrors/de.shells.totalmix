@@ -8,9 +8,9 @@ Read-only status over Global OSC, on a key or a dial. Nothing is written; a pres
 
 | Show | What you get | Needs |
 |---|---|---|
-| Channel peak level | Wide meter on the fader scale (two bars for a stereo pair), red at 0 dBFS, with a peak-hold line (1.5 s hold, then falling at 12 dB/s) and the channel's M and S pills; the S pill follows the channel's PFL button (on a Volume strip it follows the mix-node solo). The readout shows the held value. *Gain reduction* adds TotalMix's blue bar beside the scale, from 0 dB downwards. | Bus, Channel, *Send Level Messages* |
-| Clip latch | Lights red and stays lit once the peak reaches the set dBFS, with the highest peak since the last clear. *Blink* flashes it instead of holding it lit. Press to clear. | Bus, Channel, *Send Level Messages* |
-| Signal watch | Lights red once the channel has stayed below the floor for the set time, with the seconds counted. Clears itself when signal returns, or on a press. | Bus, Channel, *Send Level Messages* |
+| Channel peak level | Wide meter on the fader scale (two bars for a stereo pair), red at 0 dBFS, with a peak-hold line (*Peak hold* seconds, TotalMix's 2 s by default, then falling at 12 dB/s) and the channel's M and S pills; the S pill follows the channel's PFL button (on a Volume strip it follows the mix-node solo). The readout shows the held value. *Gain reduction* adds TotalMix's blue bar beside the scale, from 0 dB downwards. | Bus, Channel, *Send Level Messages* |
+| Clip latch | Lights red and stays lit once the peak reaches the set dBFS, with the highest peak since the last clear and, from the second clip on, how many times it has clipped (`CLIP ×3`). *Blink* flashes it instead of holding it lit. Press to clear, or set *Release after* to clear it a number of seconds after the last clip. | Bus, Channel, *Send Level Messages* |
+| Signal watch | Lights red once the channel has stayed below the floor for the set time, with the time counted in seconds, then minutes, hours and days. Clears itself when signal returns, or on a press. | Bus, Channel, *Send Level Messages* |
 | Device name | The name as reported, e.g. "Fireface UCX II (1)" | |
 | Device connection | Green "Connected" or red "No device" | |
 | DSP load | Arc gauge, orange past 75 % and red past 90 % | |
@@ -33,6 +33,8 @@ On the dynamics curve, the dashed diagonal is the level with the section bypasse
 
 Attack and release are not drawn on the curve; they appear in the values view.
 
+*Mute look* on the level view offers the Volume strip's treatments.
+
 The gain-reduction bar on the level view and on the Volume strips is TotalMix's own presentation: a blue bar beside the meter, growing down from the 0 dB mark by the compressor's reduction, on the fader curve so 6 dB of reduction reaches the 6 mark. The expander's attenuation continues the bar in green below the blue part. A dark track marks the bar's span whenever the dynamics section is on, so a resting bar reads as "no reduction" rather than "not drawn". Auto Level's gain, which TotalMix draws above the mark, is not shown, because nothing in the protocol carries it.
 
 The gain-reduction needle shows the compressor's reduction on a logarithmic 0 to 20 dB scale like a VU-type GR meter, with an EXP lamp that lights green while the expander is working.
@@ -51,6 +53,6 @@ The alarms draw their own face, so they have no appearance setting. Levels are o
 
 ## Spread across several keys
 
-*Advanced: spread across several keys* lays one panel over a block, up to 9 across and 4 down; 1 x 1 is a single key and is the default. Put the same button on every key of the block and set the same span on each: a key works out its own share from its coordinates, so nothing is configured per key. *Top-left column* and *Top-left row* say where the block starts, counting from 1 (the top-left key of the device is column 1, row 1); a key outside the block keeps its single-key artwork.
+*Advanced: spread across several keys* lays one panel over a block, up to 9 across and 4 down; 1 x 1 is a single key and is the default. Put the same button on every key of the block and set the same span on each: a key works out its own share from its coordinates, so nothing is configured per key. *Top-left column* and *Top-left row* say where the block starts, counting from 1 (the top-left key of the device is column 1, row 1); a key outside the block keeps its single-key artwork. Panels keep their proportions on any block, and labels stay clear of the bezels. The dynamics modes spread the same way.
 
 The EQ curve is redrawn at the block's full size. The other panels are magnified rather than redrawn, since their layout is fixed to one key. The artwork is continuous; the bezels between keys interrupt it.

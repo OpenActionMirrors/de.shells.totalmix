@@ -9,7 +9,7 @@ There are two families of actions. Pick the one that matches your TotalMix versi
 | TotalMix FX | 2.1 and newer (beta at the time of writing) | 1.96 to 2.0 (also works on 2.1) |
 | Channel addressing | Absolute, "input 3" is always input 3 | By position in the visible bank; can be pinned |
 | Artwork | TotalMix look: fader strips, meters, knobs, buttons | The same TotalMix look, without meters |
-| Snapshot state, DURec state | Yes | No, those keys light from their own presses |
+| Snapshot state, DURec state | Yes | Only what the mixer reports on page 3 |
 | Where new features land | Here | Maintained, not extended |
 
 New here? [Setup](setup.md) walks through the few TotalMix settings the plugin needs; after that, drag any action onto a key, pick a channel, done.
@@ -26,7 +26,7 @@ New here? [Setup](setup.md) walks through the few TotalMix settings the plugin n
 
 - [Volume](global-osc/volume.md). Faders, control room monitors, submix sends, pan, preamp gain.
 - [Toggle](global-osc/toggle.md). On/off switches with state from the mixer.
-- [Trigger](global-osc/trigger.md). Snapshots, layouts, presets, undo/redo, DURec transport, window.
+- [Trigger](global-osc/trigger.md). Snapshots (load and save), layouts, presets, undo/redo, solo and mute clear, DURec transport, window.
 - [Display](global-osc/display.md). Meters, device status, DSP load, DURec time, EQ and dynamics curves, gain-reduction needle.
 - [FX & Dynamics](global-osc/effects.md). EQ, low cut, dynamics, Auto Level, Room EQ, reverb, echo, list parameters and select keys.
 

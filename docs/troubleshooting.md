@@ -43,7 +43,7 @@ The interface isn't in the [device table](devices.md) yet, or TotalMix hasn't re
 
 ## A Global OSC key doesn't react to a change made in TotalMix
 
-TotalMix never reports the state of the mute, solo and fader groups, nor the window state, so those keys track their own presses. Everything else follows *Send changes* in the controller's Details.
+TotalMix never reports the window state, so the show / hide keys track their own presses. Everything else follows *Send changes* in the controller's Details.
 
 ## Buttons from the old plugin are gone
 

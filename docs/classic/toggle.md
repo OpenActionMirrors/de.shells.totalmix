@@ -19,8 +19,12 @@ On/off switches over classic OSC. Key only. State is mirrored from TotalMix wher
 Notes:
 
 - Per-strip Solo/PFL applies to inputs and playbacks only.
-- Snapshot and group keys light from their own presses, since TotalMix does not report their state over classic OSC. The Global OSC [Trigger](../global-osc/trigger.md) action lights snapshots from the mixer.
+- Snapshot and group keys show only what TotalMix reports on page 3, which it does not always do. The Global OSC [Trigger](../global-osc/trigger.md) action lights snapshots reliably from the mixer.
 - Bus and bank pinning work as described for [Levels & Parameters](levels.md).
+
+## Confirm with a second press
+
+Ticked, the first press arms the key and captions it; a second press within a couple of seconds writes. Left unconfirmed, nothing is written.
 
 ## Hold (momentary)
 
