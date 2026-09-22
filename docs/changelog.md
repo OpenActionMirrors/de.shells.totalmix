@@ -2,7 +2,7 @@
 
 # Changelog
 
-## [5.3.2] - 2026-09-18
+## [5.3.2] - 2026-09-22
 
 ### Changed
 - Setup and Volume docs: *Submix linked to OSC Controller* applies to the classic controller only.. TotalMix FX 2.1 beta 6 ignores it for Global OSC.
