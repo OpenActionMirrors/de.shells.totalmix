@@ -39,7 +39,8 @@ Set up whichever family you intend to use, both only if you want both. Open *Opt
 ## Finish, for either
 
 - Tick *Enable OSC Control* in TotalMix's *Options* menu.
-- Make sure *Submix linked to OSC Controller* is ticked for every Remote Controller that is *In Use*.
+- Classic actions: make sure *Submix linked to OSC Controller* (Options menu) is ticked for the classic Remote Controller.
+- Global OSC actions: untick *Submix linked to OSC Controller* for the Global OSC Remote Controller. From TotalMix FX 2.1 beta 6 on, TotalMix ignores the option for a Global OSC controller and this step is not needed.
 - When Windows or macOS asks whether TotalMix and the Stream Deck plugin may use the network, allow it. A blocked firewall prompt is the most common reason for "nothing happens".
 
 No additional software is needed.

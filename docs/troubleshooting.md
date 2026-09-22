@@ -25,6 +25,10 @@ Two connections share one *outgoing* port, which the plugin listens on. Typicall
 
 The plugin reads channel names from TotalMix. With no connection the list stays empty; check the points above, then press the refresh button next to the list. On the classic actions the list is limited by *Number of faders per bank* in TotalMix's OSC settings.
 
+## A channel is missing from the list (Global OSC)
+
+Channels hidden for *OSC Remote* in TotalMix's *Channel Layout* are left out of the lists. From TotalMix FX 2.1 beta 6 on, TotalMix also stops exchanging data for hidden input and playback channels, so a key that was already on such a channel shows "—" or no longer reacts. Unhide the channel for OSC, then press the refresh button next to the list.
+
 ## A key controls the wrong channel (classic)
 
 The classic protocol addresses strips by position in the visible bank. Pin *Bus* and *Pin bank start* in the key's settings, and set channels to mono/stereo before assigning keys. The Global OSC actions address channels absolutely and don't have this problem.

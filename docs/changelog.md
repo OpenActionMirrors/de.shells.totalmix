@@ -2,6 +2,15 @@
 
 # Changelog
 
+## [5.3.2] - 2026-09-18
+
+### Changed
+- Setup and Volume docs: *Submix linked to OSC Controller* applies to the classic controller only.. TotalMix FX 2.1 beta 6 ignores it for Global OSC.
+
+### Fixed
+- TotalMix FX 2.1 beta 6 compatibility: prevent sending of data to hidden input/playback channels. A channel TotalMix does not report at all was listed as a bare number. Until beta 5 it was sent with color=0 and my detection relied on it.
+- Settings panel lists that depend on another setting offered every entry regardless: dial gestures, *Hold the key*, *Alt function*, the bus lists and the mute style. Picking an entry the target cannot perform (for example *Mute* on a submix send) silently ran the default, and the dial kept showing it. The lists now follow the target, and a stored entry that no longer applies is set back to the default ([#71](https://github.com/shells-dw/streamdeck-totalmix/issues/71)).
+
 ## [5.3.1] - 2026-09-09
 
 ### Added

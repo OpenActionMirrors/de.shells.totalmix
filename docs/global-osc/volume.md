@@ -33,7 +33,7 @@ Main Out and Speaker B press to mute (fader to −∞) and touch to dim. A Phone
 
 In TotalMix an input strip's fader is its send into the submix currently selected in the window, so over Global OSC these levels live on the mix matrix, one per output. A *Channel fader* on an input or playback channel therefore has a *Submix* picker. *Main Out (auto)* follows the Main Out assignment. *Control room monitor (auto)* also follows the Speaker B switch. Or pin any output's submix. The fader you see in the TotalMix window only moves while that submix is selected there; the audio changes either way. Output channels have one real fader and no picker.
 
-TotalMix's *Follow Submix* option should be off when using the Global OSC actions.
+*Submix linked to OSC Controller* in TotalMix's Options menu (RME's protocol notes call it "Follow Submix") should be off for the Global OSC Remote Controller: left on, a controller restricted to one submix holds the TotalMix window on that submix. TotalMix FX 2.1 beta 6 and later ignore the option for a Global OSC controller.
 
 ### Channels
 
