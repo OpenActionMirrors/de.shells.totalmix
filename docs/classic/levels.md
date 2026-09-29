@@ -2,7 +2,7 @@
 
 # Levels & Parameters (classic)
 
-Levels, pan, preamp gain and effect parameters over classic OSC (TotalMix FX 1.96 to 2.0; also works on 2.1 in classic mode). Key or Stream Deck+ dial. Drawn in the [TotalMix look](../appearance.md): fader strips, knobs and dropdown boxes, with TotalMix's own readout strings as the value.
+Levels, pan, preamp gain and effect parameters over classic OSC (TotalMix FX 1.96 to 2.0; also works on 2.1 in classic mode). Key or Stream Deck+ dial. Drawn in the [TotalMix look](../appearance.md): fader strips, knobs and dropdown boxes, with TotalMix's own readout strings as the value. dB readouts carry a sign from ±0.1 dB and none at 0.0 dB, whichever way TotalMix writes it.
 
 ## Target
 

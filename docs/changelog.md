@@ -2,7 +2,25 @@
 
 # Changelog
 
-## [5.3.2] - 2026-09-22
+## [5.4.0] - 2026-09-29
+
+### Added
+- 48V and INST pills on Global OSC Volume strips and knobs ([#72](https://github.com/shells-dw/streamdeck-totalmix/issues/72)), switchable via *48V / Inst*.
+- 48V and INST pills on the Display level view.
+- *Show the submix (3 s)* gesture on Global OSC Volume.
+- *Submix label* on Global OSC Volume dials, below or beside the name.
+
+### Changed
+- dB readouts: `+` and `-` from ±0.1 dB, `0.0 dB` without a sign.
+- Stream Deck+ fader strip redesign: smaller fader cap, taller meter.
+- REQ moved from the FX lamp column into the header, shown only while Room EQ is on to make it more obvious.
+- Documentation images redrawn to reflect the visual changes.
+
+### Fixed
+- Dial settings panel reset the mute look *Red cast and cross* to *Red badge and cast*.
+- *Set value* for input gain ignored the detected interface's gain ceiling.
+
+## [5.3.2] - 2026-09-18
 
 ### Changed
 - Setup and Volume docs: *Submix linked to OSC Controller* applies to the classic controller only.. TotalMix FX 2.1 beta 6 ignores it for Global OSC.

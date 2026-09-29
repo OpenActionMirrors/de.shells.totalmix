@@ -20,7 +20,9 @@ Every level or parameter action also works on a regular key. Under *Key press* (
 
 *Next channel* and *Previous channel* are both a key press mode and a dial press or touch gesture. They step the button along a list of channels set under *Advanced: channel cycling*, so four dials can cover sixteen channels. Name a group there and every button using that name steps together, which turns a row of dials into one channel strip. Without a group the channel is stored on the button, so it comes back where you left it. On a dial the target has to be Channel, Input gain or Pan; Main Out and the other control-room targets have no channel to step, so the gesture is not offered there.
 
-*Alt function* swaps the dial to a second target (Channel level, Input gain or Pan) on the same channel; the same gesture swaps back. The alternate behaves as the dedicated button would and is named on the knob caption or the strip header. Not saved: a page change, an edit or a restart returns the dial to its own target.
+*Alt function* swaps the dial to a second target (Channel level, Input gain or Pan) on the same channel; the same gesture swaps back. The alternate behaves as the dedicated button would; a gain or pan alternate is named in the knob's caption. Not saved: a page change, an edit or a restart returns the dial to its own target.
+
+*Show the submix (3 s)* (Global OSC, input and playback controls) names the submix the control feeds for 3 seconds or until the next press, and writes nothing; see [Volume (TotalMix 2.1+)](global-osc/volume.md#seeing-which-submix-a-control-is-on).
 
 On Input gain, *Set to −∞* drops the preamp to 0 dB and a second press restores it. The ceiling comes from the detected interface.
 

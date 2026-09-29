@@ -10,7 +10,7 @@ Keys and Stream Deck+ displays are drawn by the plugin on every change, in colou
 
 ![Strip anatomy](images/v5_strip_anatomy.png)
 
-**Fader strips** for levels: channel name, M and S pills, the meter, RME's scale with 0 dB marked and the +3 and −3 ticks coloured as in the mixer, the cap on the real fader curve, and the readout in dB. *Meter*, *FX lamps* and *Mute / Solo* each switch off their own column, and the fader takes the room they leave. The classic Levels action draws no meter, because that protocol only reports levels for the visible bank.
+**Fader strips** for levels: channel name, M and S pills, 48V and INST pills on inputs that have those switches (Global OSC), the meter, RME's scale with 0 dB marked and the +3 and −3 ticks coloured as in the mixer, the cap on the real fader curve, and the readout in dB, signed from ±0.1 dB and unsigned at 0.0 dB. *Meter*, *FX lamps* and *Mute / Solo* each switch off their own column, and the fader takes the room they leave. The classic Levels action draws no meter, because that protocol only reports levels for the visible bank.
 
 **Knobs** for preamp gain, pan and effect parameters, drawn like TotalMix's: a dark disc with the arc on its edge, orange by default, yellow on a pan knob's left half, and the section's colour for EQ bands, dynamics and low cut. **Dropdown boxes** for list parameters. **Buttons** for toggles and triggers: mute and solo keys take TotalMix's M/S look, letter and outline in the state colour on a dark face; snapshot keys its active-snapshot look, orange number and outline; otherwise blue for mute-type switches, orange for solo, PFL and talkback, red for 48V and record, orange text for the effect sections. **Panels** for the Display action, including the EQ and dynamics curves and the gain-reduction needle.
 
@@ -24,7 +24,7 @@ Peak level with a hold line, held for the *Peak hold* time (TotalMix's 2 s by de
 
 ![Meters](images/v5_meters.png)
 
-On a Stream Deck+ display the meter shares the fader's own range and dB mapping, so a level reads directly against the scale below the fader. M and S stack in a column at the left, the FX lamps at the right.
+On a Stream Deck+ display the meter shares the fader's own range and dB mapping, so a level reads directly against the scale below the fader. M and S stack in a column at the left, with 48V and INST under them on inputs that have those switches; the FX lamps sit at the right.
 
 ### Channel colours
 

@@ -33,6 +33,14 @@ Main Out and Speaker B press to mute (fader to −∞) and touch to dim. A Phone
 
 In TotalMix an input strip's fader is its send into the submix currently selected in the window, so over Global OSC these levels live on the mix matrix, one per output. A *Channel fader* on an input or playback channel therefore has a *Submix* picker. *Main Out (auto)* follows the Main Out assignment. *Control room monitor (auto)* also follows the Speaker B switch. Or pin any output's submix. The fader you see in the TotalMix window only moves while that submix is selected there; the audio changes either way. Output channels have one real fader and no picker.
 
+#### Seeing which submix a control is on
+
+With the submix automatic, or with several dials on the same channel into different submixes, the strip alone does not say where a fader goes. Two options show it, both for input and playback controls only, since an output is a submix rather than feeding one.
+
+*Show the submix (3 s)* is a gesture: on a dial under *On press* and *On touch*, on a key under *Key press* and *Hold the key*. It replaces the strip's body with the name of the output the control feeds, marked in that output's TotalMix colour, while the header keeps the channel name and the readout. It goes away after 3 seconds or on the next press. A second press of the same gesture only takes it down; any other press, touch, hold or turn of the dial takes it down and then does what it normally does, so nothing is swallowed. It writes nothing to TotalMix. With the icon look the dial's text fields, or the key's title, name the submix for the same 3 seconds.
+
+*Submix label* keeps the name on a dial's fader strip permanently. *Below the name* adds a second header line: both names stay whole and the readout keeps its size, and in exchange the body is 12 px shorter, so the pills, lamps and meter are flatter while the fader keeps its full travel. *Beside the name* writes "Mic 1 › Main" on the one header line and leaves the body alone; the pair shares the name's width, so longer names shrink to a 10 px font and the submix is cut first ("Chat<-Loop › Win -…"). Off by default. Keys have no label, because their header has room for the name only; use the gesture there. A *Submix send* target, whose name normally reads "source → output", shows the source alone while the label is on.
+
 *Submix linked to OSC Controller* in TotalMix's Options menu (RME's protocol notes call it "Follow Submix") should be off for the Global OSC Remote Controller: left on, a controller restricted to one submix holds the TotalMix window on that submix. TotalMix FX 2.1 beta 6 and later ignore the option for a Global OSC controller.
 
 ### Channels
@@ -63,13 +71,15 @@ With the [TotalMix look](../appearance.md) a level draws a fader strip with mete
 
 Playback channels have the gear alone. The lamps are read-only, so a key that only needs to *see* EQ and dynamics state no longer needs a Toggle key each.
 
-Output strips carry a fourth lamp, **REQ**, lit while that output's Room EQ is on. TotalMix does not draw one; the section's state is otherwise only visible inside the settings panel.
+Output strips also show Room EQ: an orange **REQ** tag in the header while that output's Room EQ is on, and nothing while it is off. On a display it sits in the middle, between the name at the left and the readout at the right; on a key, where the header holds only the name, it sits left of it. TotalMix does not draw one; the section's state is otherwise only visible inside the settings panel. The tag belongs to the FX lamps and goes with them when they are switched off.
 
 *Mute look* (fader targets only; gain and pan knobs have no mute treatment) decides how a cut strip is drawn: *Subtle* lights the M pill blue, as TotalMix does. *Red badge* lights the same pill red. *Red badge and cross* adds a red cross over the strip. *Red badge and cast* adds a translucent red below the header band instead. *Red cast and cross* has both.
 
 A submix send has no mute in Global OSC, so a send at the bottom of its throw counts as cut too: the pill reads `-oo` and takes whichever treatment is set. Every step can be chosen per button, or for new buttons under *Defaults for new buttons*.
 
 *Mute / Solo* draws the M and S pills. Both are on by default, and either one switched off hands its room to the fader: on a display the travel grows towards that edge, on a key the strip grows into the space the pills held. Without the pills the strip shows no mute or solo state at all.
+
+*48V / Inst* draws a **48V** and an **INST** pill for a channel fader, input gain or pan that points at an input with those switches: under M and S on a display, beside them on a key, and as extra badges under a knob. 48V is red while phantom power is on, INST blue while the instrument (Hi-Z) input is on, the colours of the matching Toggle keys; both are unlit while off. TotalMix only reports a switch for inputs that have it (on a Fireface UCX II, 48V on inputs 1 and 2 and Inst on 3 and 4), so every other channel shows no pill at all and nothing has to be configured per interface. The *48V / Inst* checkbox itself only appears in the settings panel while the selected channel has one of the switches; that needs a connection to TotalMix, and it shows up a moment after a channel is picked. On a display the pills sit in the M/S column: one pill takes the slot level with the meter, and on an input with both switches the four pills share the column at a smaller size. With *Mute / Solo* switched off the column stays for the pills alone; switch both off to give the fader the full width. The pills are read-only: assign *Phantom power (48V)* to *On press* or *On touch* to switch 48V from the same dial, or use a Toggle key for either.
 
 ## Notes
 
